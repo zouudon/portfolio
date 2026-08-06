@@ -12,6 +12,7 @@ export type ProjectSection = {
   images?: string[]
   video?: string
   imageLayout?: 'full' | 'pair' | 'triple'
+  presentation?: 'editorial-split'
 }
 
 export type Project = {
@@ -52,10 +53,10 @@ export const categories: Category[] = [
   },
   {
     slug: 'ui-ux-awards',
-    title: 'UI/UX & Awards',
-    short: 'Dashboards & competitions',
+    title: 'Digital & Product Experience',
+    short: 'Interfaces, systems & awards',
     description:
-      'Command-center interface design for counter-drone systems, and the award submissions built around them.',
+      'Command-center interface design for counter-drone systems, including the product communication and award submissions built around the experience.',
   },
   {
     slug: 'exhibitions-events',
@@ -84,66 +85,82 @@ export const projects: Project[] = [
   {
     slug: 'award-submissions',
     category: 'ui-ux-awards',
-    title: 'iF · Red Dot · Golden Pin Submissions',
-    subtitle: 'Competition presentation design for three international design awards',
-    year: '2024 – 2025',
-    role: 'Presentation Design, Art Direction',
-    tags: ['Award Submission', 'Presentation Design'],
-    cover: A('ui-ux-awards/reddot-board-01.jpg'),
+    title: 'T.Meta Anti-Drone System',
+    subtitle: 'Web Application',
+    year: '2023',
+    role: 'UI/UX Presentation, Visual Communication',
+    tags: ['Digital Product', 'UI/UX', 'Web Application'],
+    cover: A('ui-ux-awards/tmeta-cover.jpg'),
     gallery: [
-      A('ui-ux-awards/reddot-board-01.jpg'),
-      A('ui-ux-awards/reddot-board-02.jpg'),
-      A('ui-ux-awards/reddot-board-03.jpg'),
-      A('ui-ux-awards/reddot-board-04.jpg'),
-      A('ui-ux-awards/goldenpin-01.jpg'),
-      A('ui-ux-awards/goldenpin-02.jpg'),
-      A('ui-ux-awards/if-imac-mockup.png'),
+      A('ui-ux-awards/t.meta-01.jpg'),
+      A('ui-ux-awards/t.meta-02.jpg'),
+      A('ui-ux-awards/t.meta-03.jpg'),
+      A('ui-ux-awards/t.meta-04.jpg'),
+      A('ui-ux-awards/t.meta-05.jpg'),
+      A('ui-ux-awards/t.meta-06.jpg'),
     ],
     summary:
-      'Turning a defense-tech UI system into competition-ready presentation boards for iF Design Award, Red Dot Award, and Taiwan\'s Golden Pin Design Award.',
+      'An AI-powered tactical management interface integrating drone detection, tracking, monitoring, and jamming into one anti-drone command system.',
     body: [
-      'Award submissions live or die on the first five seconds of a judge\'s attention — before any of the underlying product story gets read. For each award I re-cut the T.Meta interface work into a distinct presentation narrative: problem framing, system overview, then a close-up on the interaction details that don\'t show up in a product photo.',
-      'iF\'s submission leaned on device mockups (iMac, iPhone, multi-device spreads) to show the system working across form factors. Red Dot\'s board format called for a tighter, more editorial single-image story per panel. Golden Pin, judged by a domestic panel, let the narrative go deeper into the defense-specific problem the system solves.',
-      'Three different formats, one underlying design system — the discipline was knowing what to cut for each audience.',
+      'A wide variety of drones poses a significant threat to society and national defense. The T.Meta anti-drone system is designed to protect lives and property. Its interface integrates countermeasures, including detection, tracking, monitoring, and jamming. With AI-powered tactical management, T.Meta provides fully automated defense, enhancing user experience. Compared to traditional radar systems, its intuitive design streamlines operations and improves response times, boosting efficiency.',
+      'Beyond military use, T.Meta safeguards critical infrastructure like airports and power plants, advancing drone defense and promoting societal security.',
     ],
+    awardUrl: 'https://ifdesign.com/en/winner-ranking/project/tmeta-anti-drone-system/703466',
+    awardLabel: 'View iF Design Award listing',
     sections: [
       {
-        eyebrow: 'The Challenge',
-        heading: 'Three panels, three judging cultures',
+        eyebrow: 'Overview',
+        heading: 'An integrated anti-drone command system',
         text: [
-          'Award submissions live or die in the first five seconds of a judge\'s attention, before any of the underlying product story gets read. For each award I re-cut the same T.Meta interface work into a distinct presentation narrative: problem framing, system overview, then a close-up on the interaction details that don\'t show up in a plain product photo.',
+          'A wide variety of drones poses a significant threat to society and national defense. The T.Meta anti-drone system is designed to protect lives and property. Its interface integrates countermeasures, including detection, tracking, monitoring, and jamming.',
         ],
+        images: [A('ui-ux-awards/t.meta-01.jpg')],
+        imageLayout: 'full',
       },
       {
-        eyebrow: 'iF Design Award',
-        heading: 'Selling the system across devices',
+        eyebrow: '01 · Tactical Overview',
+        heading: 'Detection, tracking, monitoring, and jamming',
         text: [
-          'iF\'s submission leaned on device mockups — iMac, iPhone, multi-device spreads — to show the interface working consistently across form factors, since the judging panel evaluates digital interface work partly on how coherent a system feels across screens.',
+          'With AI-powered tactical management, T.Meta provides fully automated defense, enhancing user experience.',
         ],
-        images: [A('ui-ux-awards/if-imac-mockup.png')],
+        images: [A('ui-ux-awards/t.meta-02.jpg')],
+        imageLayout: 'full',
       },
       {
-        eyebrow: 'Red Dot Award',
-        heading: 'A tighter, editorial single-image story',
+        eyebrow: '02 · Operational Efficiency',
+        heading: 'Faster decisions through an intuitive interface',
         text: [
-          'Red Dot\'s board format rewards a single strong image per panel over a busy collage. Each board isolates one idea — the tactical map, the target list, the edge device — so a judge flipping through dozens of entries an hour gets the point without reading a paragraph.',
+          'Compared to traditional radar systems, its intuitive design streamlines operations and improves response times, boosting efficiency.',
         ],
-        images: [
-          A('ui-ux-awards/reddot-board-01.jpg'),
-          A('ui-ux-awards/reddot-board-02.jpg'),
-          A('ui-ux-awards/reddot-board-03.jpg'),
-          A('ui-ux-awards/reddot-board-04.jpg'),
-        ],
-        imageLayout: 'pair',
+        images: [A('ui-ux-awards/t.meta-03.jpg')],
+        imageLayout: 'full',
       },
       {
-        eyebrow: 'Golden Pin Design Award',
-        heading: 'Going deeper for a domestic panel',
+        eyebrow: '03 · Broader Protection',
+        heading: 'Safeguarding critical infrastructure',
         text: [
-          'Golden Pin is judged by a Taiwanese panel already familiar with the defense-tech context, which let the narrative go deeper into the specific operational problem the system solves rather than re-explaining the industry from scratch.',
+          'Beyond military use, T.Meta safeguards critical infrastructure like airports and power plants, advancing drone defense and promoting societal security.',
         ],
-        images: [A('ui-ux-awards/goldenpin-01.jpg'), A('ui-ux-awards/goldenpin-02.jpg')],
-        imageLayout: 'pair',
+        images: [A('ui-ux-awards/t.meta-04.jpg')],
+        imageLayout: 'full',
+      },
+      {
+        eyebrow: '04 · Multi-Device Command',
+        heading: 'Operational information across devices',
+        text: [
+          'The system extends essential monitoring and response information to connected devices, supporting faster access to critical status updates.',
+        ],
+        images: [A('ui-ux-awards/t.meta-05.jpg')],
+        imageLayout: 'full',
+      },
+      {
+        eyebrow: '05 · Situational Awareness',
+        heading: 'Designed for high-stakes environments',
+        text: [
+          'Beyond military use, T.Meta safeguards critical infrastructure like airports and power plants, advancing drone defense and promoting societal security.',
+        ],
+        images: [A('ui-ux-awards/t.meta-06.jpg')],
+        imageLayout: 'full',
       },
     ],
   },
@@ -310,8 +327,8 @@ export const projects: Project[] = [
     year: '2019',
     role: 'Student Project — Brand Identity',
     tags: ['Student Work', 'Brand Identity'],
-    cover: A('brand-identity/student-eggdesign-01.jpg'),
-    gallery: [A('brand-identity/student-eggdesign-01.jpg')],
+    cover: A('egg-studio/signage.png'),
+    gallery: [A('egg-studio/process.jpg'), A('egg-studio/signage.png')],
     summary:
       'A wordmark and identity concept for "Egg Design," built around a single geometric egg mark, designed as a team project during my design degree.',
     body: [
@@ -396,22 +413,60 @@ export const projects: Project[] = [
   {
     slug: 'internship-campaign',
     category: 'exhibitions-events',
-    title: 'Summer Internship Brand Campaign',
-    subtitle: 'A multi-year onboarding kit and key visual system',
-    year: '2023 – 2025',
-    role: 'Campaign Design, Illustration',
-    tags: ['Campaign', 'Onboarding', 'Illustration'],
-    cover: A('exhibitions-events/internship-2024-kv.jpg'),
+    title: 'Brand Culture & Internal Campaigns',
+    subtitle: 'Brand identity extended into employee experiences and company milestones',
+    year: '2022 – 2024',
+    role: 'Visual Design, Packaging & Merchandise',
+    tags: ['Brand Culture', 'Campaign', 'Packaging', 'Merchandise'],
+    cover: A('brand-culture/fit-challenge.jpg'),
     gallery: [
-      A('exhibitions-events/internship-2024-kv.jpg'),
-      A('exhibitions-events/internship-2025-01.jpg'),
-      A('exhibitions-events/internship-2025-02.jpg'),
+      A('brand-culture/fit-challenge.jpg'),
+      A('brand-culture/intern-welcome-kit.jpg'),
+      A('brand-culture/sixth-anniversary.png'),
+      A('brand-culture/fourth-anniversary.jpg'),
     ],
     summary:
-      'Three consecutive years of key visuals, onboarding kits, and identity badges for Tron Future\'s summer internship program.',
+      'A collection of internal campaigns and branded touchpoints created for Tron Future — from wellness initiatives and internship onboarding to company anniversaries.',
     body: [
-      'Unlike the defense-hardware side of the brand, the internship campaign gets to be warm and a little playful — it\'s the first impression a batch of new interns gets of the company. Each year got its own key visual and illustration style, while staying recognizably part of the same annual tradition.',
-      'The onboarding kit itself — welcome card, lanyard, ID badge, a kraft-paper box to hold it all — was treated as a small packaging project in its own right, designed to be opened on day one as a first, tangible "welcome" moment.',
+      'Internal culture is where the corporate identity becomes tangible. Across wellness initiatives, internship onboarding, and company anniversaries, I translated Tron Future\'s visual language into approachable employee experiences — designed to feel useful, collectible, and recognizably part of the same brand.',
+    ],
+    sections: [
+      {
+        eyebrow: '2023 · Employee Wellness',
+        heading: 'Fit Challenge Prize Set',
+        text: [
+          'Designed the full prize package for Tron Future\'s internal wellness challenge: a sport towel, embroidered patches, an enamel pin, and matching socks. Pixel-art renderings of company products turned the brand\'s technical visual language into a playful, collectible merchandise system.',
+        ],
+        images: [A('brand-culture/fit-challenge.jpg')],
+        presentation: 'editorial-split',
+      },
+      {
+        eyebrow: '2024 · Employer Branding',
+        heading: 'Intern Welcome Kit',
+        text: [
+          'Created the internship welcome experience from kraft gift box and “Hello!” graphic to orientation cards, lanyard, and ID badge. As the interns\' first physical touchpoint with the company, the kit balanced a professional identity with a warmer, more approachable tone.',
+        ],
+        images: [A('brand-culture/intern-welcome-kit.jpg')],
+        presentation: 'editorial-split',
+      },
+      {
+        eyebrow: 'Company Milestone',
+        heading: '6th Anniversary Gift Set',
+        text: [
+          'Created a custom cookie-and-card set for Tron Future\'s sixth anniversary in collaboration with 山山Studio. Original illustrations and a “Since 2018” cookie transformed a small everyday gift into a shareable piece of company storytelling.',
+        ],
+        images: [A('brand-culture/sixth-anniversary.png')],
+        presentation: 'editorial-split',
+      },
+      {
+        eyebrow: '2022 · Company Milestone',
+        heading: '4th Anniversary Campaign',
+        text: [
+          'Led the anniversary visual across a 2022 desk calendar, event key visual, sport towel, and keepsake package. The company\'s radar product became the central graphic, linking print and merchandise into one cohesive milestone campaign.',
+        ],
+        images: [A('brand-culture/fourth-anniversary.jpg')],
+        presentation: 'editorial-split',
+      },
     ],
   },
   {
@@ -578,9 +633,9 @@ export const projects: Project[] = [
     cover: A('cover-updates/ilook-cereal.png'),
     gallery: [A('editorial-print/ilook-scene-01.jpg'), A('editorial-print/student-ilook-01.jpg')],
     summary:
-      'A full packaging system for a fictional organic cereal brand, "I Look 路可" — logo, flavor illustrations, box, and bag design.',
+      'An organic crispy cereal brand built around curiosity, discovery, and four character-led flavours.',
     body: [
-      'Each of four flavors gets its own watercolor character illustration, peeking out from a torn-paper window on the box front — matcha almond, chocolate strawberry, strawberry berry, and honey. The brand line, "Life is not lacking in beauty, but lacking in discovery," carries through onto the outer carry bag and gift box.',
+      'Inspired by the sound of “look for,” I Look turns everyday discovery into a packaging idea. Torn-paper openings reveal hand-drawn characters and cereal textures across four flavours — matcha almond, cranberry cocoa, strawberry berry, and sweet honey — extending from individual packs to a gift box and carry bag.',
     ],
     behanceUrl: 'https://www.behance.net/gallery/119401963/-I-Look-',
   },
@@ -667,8 +722,8 @@ export const projects: Project[] = [
     year: '2021',
     role: 'Student / Personal Project — Product & Packaging Design',
     tags: ['Student Work', 'Product Design', 'Packaging', 'Golden Pin New Design Award'],
-    cover: A('product-visuals/student-zooler-01.jpg'),
-    gallery: [A('product-visuals/student-zooler-01.jpg'), A('product-visuals/student-zooler-02.jpg')],
+    cover: A('zooler/cover.jpg'),
+    gallery: [A('zooler/content-01.jpg'), A('zooler/content-02.jpg'), A('zooler/content-03.jpg'), A('zooler/content-04.jpg')],
     summary:
       'A set of six rulers, triangles, and a protractor that teach kids animal facts through comparison — designed and prototyped with Pinnhua Chen. Selected for the Golden Pin New Design Award.',
     body: [

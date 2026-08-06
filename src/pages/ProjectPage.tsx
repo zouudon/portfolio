@@ -2,6 +2,9 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight } from '@phosphor-icons/react'
 import { Reveal } from '../components/Reveal'
 import { ProjectSectionBlock } from '../components/ProjectSectionBlock'
+import { EggStudioCase } from '../components/EggStudioCase'
+import { ILookCase } from '../components/ILookCase'
+import { ZoolerCase } from '../components/ZoolerCase'
 import { getProject, projects } from '../lib/projects'
 
 const assetUrl = (path: string) => `${import.meta.env.BASE_URL}assets/${path}`
@@ -15,22 +18,38 @@ export function ProjectPage() {
   const nextProject = projects[(idx + 1) % projects.length]
   const hasSections = Boolean(project.sections?.length)
   const isAwardSubmission = project.slug === 'award-submissions'
+  const isEditorialSplit = project.sections?.every((section) => section.presentation === 'editorial-split')
+  const isEggStudio = project.slug === 'egg-design-studio'
+  const isZooler = project.slug === 'zooler-ruler-set'
+  const isILook = project.slug === 'ilook-cereal-packaging'
 
   return (
     <article className="pt-[56px]">
       <div className="max-w-[1800px] mx-auto grid md:grid-cols-[360px_minmax(0,1fr)]">
         <main className="min-w-0 bg-bg md:col-start-2">
-          <Reveal>
-            <img
-              src={project.cover}
-              alt={project.title}
-              className="w-full min-h-[52vh] max-h-[92vh] object-cover bg-bg-alt"
-            />
-          </Reveal>
+          {isEggStudio ? (
+            <EggStudioCase />
+          ) : isZooler ? (
+            <ZoolerCase />
+          ) : isILook ? (
+            <ILookCase />
+          ) : (
+            <>
+          {!isEditorialSplit && (
+            <Reveal>
+              <img
+                src={project.cover}
+                alt={project.title}
+                className={isAwardSubmission
+                  ? 'block w-full h-auto bg-bg-alt'
+                  : 'w-full min-h-[52vh] max-h-[92vh] object-cover bg-bg-alt'}
+              />
+            </Reveal>
+          )}
 
-          <div className="py-12 md:py-20">
+          <div className={isEditorialSplit ? '' : 'py-12 md:py-20'}>
             {hasSections ? (
-              <div className="space-y-24 md:space-y-32">
+              <div className={isEditorialSplit ? '' : 'space-y-24 md:space-y-32'}>
                 {project.sections!.map((section, index) => (
                   <ProjectSectionBlock key={index} section={section} index={index} title={project.title} />
                 ))}
@@ -49,6 +68,8 @@ export function ProjectPage() {
               </div>
             )}
           </div>
+            </>
+          )}
         </main>
 
         <aside className="relative md:col-start-1 md:row-start-1 border-r border-line bg-bg">

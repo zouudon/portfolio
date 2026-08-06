@@ -15,10 +15,16 @@ const eras = [
     projects: [
       { title: 'International Exhibitions', zh: '國際展覽與品牌體驗', tags: ['Exhibition', 'Brand Experience'], slug: 'international-exhibitions' },
       { title: 'Brand Identity & Applications', zh: '品牌識別與延伸應用', tags: ['Branding', 'CIS'], slug: 'brand-identity-system' },
-      { title: 'Digital & Product Experience', zh: '數位與產品體驗', tags: ['Digital / UI', 'Award'], slug: 'award-submissions' },
+      {
+        title: 'Digital & Product Experience',
+        zh: '數位與產品體驗',
+        tags: ['Digital / UI', 'Award'],
+        slug: 'award-submissions',
+        cover: assetUrl('ui-ux-awards/tmeta-cover.jpg'),
+      },
       { title: 'Packaging & Product Graphics', zh: '包裝與產品圖像', tags: ['Packaging', 'Product'], slug: 'packaging-design' },
       { title: 'Editorial & Technical Communication', zh: '型錄、手冊與技術溝通', tags: ['Editorial', 'Manual'], slug: 'product-catalog' },
-      { title: 'Campaigns & Internal Culture', zh: '校園招募與企業文化', tags: ['Campaign', 'Internal'], slug: 'internship-campaign' },
+      { title: 'Brand Culture & Internal Campaigns', zh: '品牌文化與內部活動', tags: ['Brand Culture', 'Campaign'], slug: 'internship-campaign', cover: assetUrl('brand-culture/fit-challenge.jpg') },
     ],
   },
   {
@@ -27,7 +33,13 @@ const eras = [
     title: 'Graduation Project',
     note: 'Award-winning Product Design',
     projects: [
-      { title: 'Zooler', zh: '動尺動尺——教育產品與視覺系統', tags: ['Product', 'Packaging', 'Award'], slug: 'zooler-ruler-set' },
+      {
+        title: 'Zooler',
+        zh: '動尺動尺——教育產品與視覺系統',
+        tags: ['Product', 'Packaging', 'Award'],
+        slug: 'zooler-ruler-set',
+        cover: assetUrl('zooler/cover.jpg'),
+      },
       {
         title: 'Power Hardware Internship',
         zh: '東鐵五金——手冊與廣告文宣設計',

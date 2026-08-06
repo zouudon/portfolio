@@ -1,30 +1,15 @@
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, EnvelopeSimple, InstagramLogo, LinkSimple } from '@phosphor-icons/react'
+import { EnvelopeSimple, InstagramLogo, LinkSimple } from '@phosphor-icons/react'
 const capabilities = ['Branding', 'Exhibition', 'Marketing', 'Product Communication', 'UI / Digital']
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-bg">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-8 pt-24 pb-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 border-b border-white/10 pb-16">
-          <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-white/50 mb-4">Get in touch</p>
-            <h2 className="font-display text-4xl md:text-6xl font-medium tracking-tight max-w-xl leading-[1.05]">
-              Let&rsquo;s build a brand people remember.
-            </h2>
-          </div>
-          <Link
-            to="/contact"
-            className="group shrink-0 inline-flex items-center gap-3 rounded-full bg-bg text-ink pl-6 pr-2 py-2 font-medium w-max"
-          >
-            Contact
-            <span className="w-9 h-9 rounded-full bg-ink/10 flex items-center justify-center transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <ArrowUpRight size={16} weight="bold" />
-            </span>
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-14 text-sm">
+    <footer
+      className="text-bg"
+      style={{ background: 'linear-gradient(125deg, #15161a 0%, #15161a 58%, #19235a 100%)' }}
+    >
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8 pt-16 pb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-14 text-sm">
           <div>
             <p className="font-display text-lg mb-4">Zou Lin</p>
             <p className="text-white/50 max-w-[22ch]">Brand &amp; Marketing Designer based in Taiwan.</p>

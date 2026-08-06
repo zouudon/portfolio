@@ -4,7 +4,7 @@
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --color-bg: #ececea;
+  --color-bg: #f2f2f2;
   --color-bg-alt: #e2e2de;
   --color-surface: #f7f7f5;
   --color-ink: #15161a;
@@ -55,6 +55,38 @@ a {
 
 button {
   font: inherit;
+}
+
+.egg-case,
+.egg-case h1,
+.egg-case h2,
+.egg-case h3,
+.egg-case h4 {
+  font-family: "Poppins", "Noto Sans TC", sans-serif;
+}
+
+.zooler-case,
+.zooler-case h1,
+.zooler-case h2,
+.zooler-case h3,
+.zooler-case h4 {
+  font-family: "Poppins", "Noto Sans TC", sans-serif;
+}
+
+.zooler-case {
+  font-weight: 300;
+}
+
+.zooler-case .zooler-zh {
+  font-family: "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+}
+
+.zooler-case .zooler-zh-title {
+  font-family: "PingFang TC", "Noto Sans TC", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .case-label {

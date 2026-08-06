@@ -9,6 +9,46 @@ function imageGridClass(layout: ProjectSection['imageLayout'], count: number) {
 }
 
 export function ProjectSectionBlock({ section, index, title }: { section: ProjectSection; index: number; title: string }) {
+  if (section.presentation === 'editorial-split' && section.images?.[0]) {
+    const imageFirst = index % 2 === 0
+
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-bg">
+        <Reveal
+          className={imageFirst ? 'md:col-start-1' : 'md:col-start-2'}
+          delay={Math.min(index * 0.04, 0.2)}
+        >
+          <img
+            src={section.images[0]}
+            alt={`${title} — ${section.heading}`}
+            className="block w-full aspect-square object-contain bg-bg-alt"
+          />
+        </Reveal>
+
+        <Reveal
+          className={`${imageFirst ? 'md:col-start-2' : 'md:col-start-1 md:row-start-1'} flex`}
+          delay={Math.min(index * 0.04 + 0.06, 0.24)}
+        >
+          <div className="w-full px-6 py-12 sm:px-10 md:p-[clamp(2.5rem,5vw,6rem)] md:aspect-square flex flex-col justify-center">
+            {section.eyebrow && (
+              <p className="text-[10px] uppercase tracking-[0.16em] text-ink-faint mb-3">{section.eyebrow}</p>
+            )}
+            <h2 className="font-display text-xl md:text-[clamp(1.25rem,1.8vw,1.8rem)] font-semibold tracking-tight leading-tight mb-4">
+              {section.heading}
+            </h2>
+            <div className="space-y-3 max-w-[44ch]">
+              {section.text.map((paragraph, paragraphIndex) => (
+                <p key={paragraphIndex} className="text-[12px] md:text-[13px] text-ink-soft leading-[1.65]">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    )
+  }
+
   return (
     <div>
       <Reveal delay={Math.min(index * 0.04, 0.2)}>

@@ -22,11 +22,11 @@ export function Nav() {
       overHomeHero ? 'text-white bg-transparent border-white/25' : 'text-ink bg-bg/95 backdrop-blur-md border-line'
     }`}>
       <div className="h-[56px] px-6 md:px-10 flex items-center justify-between">
-        <Link to="/" className="pointer-events-auto font-display font-semibold text-base tracking-[.03em]">
+        <Link to="/" className="pointer-events-auto h-full min-w-28 flex items-center font-display font-semibold text-lg tracking-[.03em]">
           Zou Lin<span className="text-accent">.</span>
         </Link>
-        <nav className="pointer-events-auto hidden md:flex items-center gap-9">
-          {links.map((item) => <NavLink key={item.to} to={item.to} className={({ isActive }) => `py-1 text-xs font-medium transition-opacity ${isActive ? 'opacity-100 underline underline-offset-8' : 'opacity-70 hover:opacity-100'}`}>{item.label}</NavLink>)}
+        <nav className="pointer-events-auto hidden md:flex h-full items-center gap-3">
+          {links.map((item) => <NavLink key={item.to} to={item.to} className={({ isActive }) => `h-full px-3 flex items-center text-sm font-medium transition-opacity ${isActive ? 'opacity-100 underline underline-offset-8' : 'opacity-70 hover:opacity-100'}`}>{item.label}</NavLink>)}
         </nav>
         <button className="pointer-events-auto md:hidden w-10 h-10 flex items-center justify-center" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
           {menuOpen ? <X size={20} /> : <List size={20} />}

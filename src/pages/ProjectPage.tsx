@@ -5,6 +5,7 @@ import { ProjectSectionBlock } from '../components/ProjectSectionBlock'
 import { EggStudioCase } from '../components/EggStudioCase'
 import { ILookCase } from '../components/ILookCase'
 import { ZoolerCase } from '../components/ZoolerCase'
+import { ProductTechnicalCase } from '../components/ProductTechnicalCase'
 import { getProject, projects } from '../lib/projects'
 
 const assetUrl = (path: string) => `${import.meta.env.BASE_URL}assets/${path}`
@@ -22,6 +23,8 @@ export function ProjectPage() {
   const isEggStudio = project.slug === 'egg-design-studio'
   const isZooler = project.slug === 'zooler-ruler-set'
   const isILook = project.slug === 'ilook-cereal-packaging'
+  const isInternationalExhibitions = project.slug === 'international-exhibitions'
+  const isProductTechnical = project.slug === 'product-catalog'
 
   return (
     <article className="pt-[56px]">
@@ -33,9 +36,17 @@ export function ProjectPage() {
             <ZoolerCase />
           ) : isILook ? (
             <ILookCase />
+          ) : isProductTechnical ? (
+            <ProductTechnicalCase />
+            ) : isInternationalExhibitions ? (
+              <img
+                src={project.gallery[0]}
+                alt="TADTE 2025 exhibition design and on-site applications"
+                className="block w-full h-auto bg-bg-alt"
+              />
           ) : (
             <>
-          {!isEditorialSplit && (
+          {!isEditorialSplit && !isAwardSubmission && (
             <Reveal>
               <img
                 src={project.cover}

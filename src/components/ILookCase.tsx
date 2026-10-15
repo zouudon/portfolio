@@ -86,8 +86,16 @@ export function ILookCase() {
       </section>
 
       <div className="grid md:grid-cols-2">
-        <ProjectImage src="cocoa.webp" alt="Cranberry cocoa cereal packaging detail" />
-        <ProjectImage src="flavours.webp" alt="Four I Look cereal flavour packages" />
+        <ProjectImage
+          src="cocoa.webp"
+          alt="Cranberry cocoa cereal packaging detail"
+          className="aspect-square !h-full object-cover"
+        />
+        <ProjectImage
+          src="flavours.webp"
+          alt="Four I Look cereal flavour packages"
+          className="aspect-square !h-full object-cover"
+        />
       </div>
 
       <section className="px-[6%] py-16 md:py-20">

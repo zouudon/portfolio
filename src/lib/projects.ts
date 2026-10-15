@@ -345,68 +345,14 @@ export const projects: Project[] = [
     year: '2024 – 2026',
     role: 'Exhibition Design, Large-Format Graphics',
     tags: ['Exhibition Design', 'Large Format'],
-    cover: A('exhibitions-events/singapore-airshow-2026.jpg'),
-    gallery: [
-      A('exhibitions-events/tadte-2025-entrance.jpg'),
-      A('exhibitions-events/singapore-airshow-2026.jpg'),
-      A('exhibitions-events/singapore-2024-wall.jpg'),
-      A('exhibitions-events/dsei-jp-2025-01.jpg'),
-      A('exhibitions-events/dsei-jp-2025-02.jpg'),
-      A('exhibitions-events/idex-2025.jpg'),
-      A('exhibitions-events/tadte-2025-floor.jpg'),
-      A('exhibitions-events/tadte-2025-drone.jpg'),
-    ],
+    cover: A('exhibitions-events/international-exhibitions-cover.jpg'),
+    gallery: [A('exhibitions-events/tadte-2025-case.jpg')],
     summary:
       'Booth walls, banners, and key visuals for World Defense Show, DSEI Japan, Paris Air Show, Singapore Airshow, TADTE, IDEX, and more — over ten shows across three years.',
     body: [
       'Every trade show has its own booth footprint, local-language requirements, and shipping constraints, but the brand has to read as the same company at all of them. That meant building a flexible system of wall layouts, KV crops, and banner formats that could be reassembled for a 2×2.5m pop-up or a 5×2.5m structural wall without starting from zero each time.',
       'DSEI Japan required a fully Japanese-localized banner set alongside the English originals. Singapore Airshow\'s key visual — a tactical map rendered as a wide-format banner — became one of the strongest single images to come out of this whole body of work.',
       'Across three years and ten-plus shows, this became less "design a booth" and more "maintain a system that scales to whatever booth footprint we get assigned this quarter."',
-    ],
-    sections: [
-      {
-        eyebrow: 'The Challenge',
-        heading: 'One brand, ten-plus booth footprints',
-        text: [
-          'Every trade show has its own booth footprint, local-language requirements, and shipping constraints, but the brand has to read as the same company at all of them. That meant building a flexible system of wall layouts, KV crops, and banner formats that could be reassembled for a 2×2.5m pop-up or a 5×2.5m structural wall without starting from zero each time.',
-          'Across three years and ten-plus shows, this became less "design a booth" and more "maintain a system that scales to whatever booth footprint we get assigned this quarter."',
-        ],
-      },
-      {
-        eyebrow: 'TADTE 2025 · Taipei',
-        heading: 'From lamppost banner to show floor',
-        text: [
-          'For the Taipei Aerospace & Defense Technology Exhibition, the same key visual had to extend from entrance totems and lamppost banners outside the hall to the booth itself — hanging drone hardware, a wall-mounted T.Meta display, and signage, all photographed live on the floor rather than staged.',
-        ],
-        images: [
-          A('exhibitions-events/tadte-2025-entrance.jpg'),
-          A('exhibitions-events/tadte-2025-floor.jpg'),
-          A('exhibitions-events/tadte-2025-drone.jpg'),
-        ],
-        imageLayout: 'triple',
-      },
-      {
-        eyebrow: 'Singapore Airshow',
-        heading: 'A tactical map as the key visual',
-        text: [
-          'Singapore Airshow\'s key visual — a tactical map rendered as a wide-format banner — became one of the strongest single images to come out of this whole body of work, extended across a full booth wall system for the 2024 and 2026 shows.',
-        ],
-        images: [A('exhibitions-events/singapore-airshow-2026.jpg'), A('exhibitions-events/singapore-2024-wall.jpg')],
-        imageLayout: 'pair',
-      },
-      {
-        eyebrow: 'DSEI Japan & IDEX',
-        heading: 'Localizing for a second language',
-        text: [
-          'DSEI Japan required a fully Japanese-localized banner set alongside the English originals — same grid, same hierarchy, new typesetting rules for a language with very different line-length and character-spacing needs. IDEX called for the same wall system rebuilt at a different structural footprint.',
-        ],
-        images: [
-          A('exhibitions-events/dsei-jp-2025-01.jpg'),
-          A('exhibitions-events/dsei-jp-2025-02.jpg'),
-          A('exhibitions-events/idex-2025.jpg'),
-        ],
-        imageLayout: 'triple',
-      },
     ],
     featured: true,
   },
@@ -555,11 +501,11 @@ export const projects: Project[] = [
   {
     slug: 'product-catalog',
     category: 'editorial-print',
-    title: 'Product Catalog & Technical DM',
-    subtitle: 'A 48-page multilingual product catalog and supporting DM layouts',
-    year: '2025 – 2026',
-    role: 'Editorial Layout, Information Design',
-    tags: ['Editorial', 'Layout', 'Multilingual'],
+    title: 'Product & Technical Communication',
+    subtitle: 'A documentation system spanning product DMs, user manuals, and technical information',
+    year: '2021 – 2026',
+    role: 'Product Communication, Editorial Design, Information Design',
+    tags: ['Product DM', 'User Manual', 'Information Design'],
     cover: A('editorial-print/catalog-cover.png'),
     gallery: [
       A('editorial-print/catalog-cover.png'),
@@ -568,10 +514,10 @@ export const projects: Project[] = [
       A('editorial-print/catalog-spread-smallsat.jpg'),
     ],
     summary:
-      'A full-line product catalog spanning radar, satellite, and counter-drone systems, produced in parallel Chinese, English, and Japanese editions.',
+      'Five years of product brochures, user manuals, and technical publications across multiple technology product lines.',
     body: [
-      'This catalog carries the full weight of the product line — every spec sheet, every system diagram, every use case — in a format that has to work equally well printed at a trade show and read on a tablet during a sales call.',
-      'The biggest constraint was consistency across three languages with very different text lengths and typesetting conventions. Every spread was built on a grid flexible enough that a Japanese caption and its English equivalent could sit in the same frame without one of them looking like an afterthought.',
+      'Over five years, I developed and maintained product brochures and user manuals across multiple technology product lines—turning complex specifications, workflows, and operating instructions into clear, consistent communication.',
+      'The work required a shared system for information hierarchy, diagrams, multilingual layouts, and reusable templates so that every new publication could remain recognisable while adapting to different products and audiences.',
     ],
     sections: [
       {

@@ -13,7 +13,13 @@ const eras = [
     title: 'Tron Future Tech',
     note: 'Professional Experience · Technology Industry',
     projects: [
-      { title: 'International Exhibitions', zh: '國際展覽與品牌體驗', tags: ['Exhibition', 'Brand Experience'], slug: 'international-exhibitions' },
+      {
+        title: 'International Exhibitions',
+        zh: '國際展覽與品牌體驗',
+        tags: ['Exhibition', 'Brand Experience'],
+        slug: 'international-exhibitions',
+        cover: assetUrl('exhibitions-events/international-exhibitions-cover.jpg'),
+      },
       { title: 'Brand Identity & Applications', zh: '品牌識別與延伸應用', tags: ['Branding', 'CIS'], slug: 'brand-identity-system' },
       {
         title: 'Digital & Product Experience',
@@ -23,7 +29,13 @@ const eras = [
         cover: assetUrl('ui-ux-awards/tmeta-cover.jpg'),
       },
       { title: 'Packaging & Product Graphics', zh: '包裝與產品圖像', tags: ['Packaging', 'Product'], slug: 'packaging-design' },
-      { title: 'Editorial & Technical Communication', zh: '型錄、手冊與技術溝通', tags: ['Editorial', 'Manual'], slug: 'product-catalog' },
+      {
+        title: 'Product & Technical Communication',
+        zh: '產品型錄、操作手冊與技術資訊系統',
+        tags: ['Product DM', 'User Manual', 'Information Design'],
+        slug: 'product-catalog',
+        cover: assetUrl('editorial-print/catalog-cover.png'),
+      },
       { title: 'Brand Culture & Internal Campaigns', zh: '品牌文化與內部活動', tags: ['Brand Culture', 'Campaign'], slug: 'internship-campaign', cover: assetUrl('brand-culture/fit-challenge.jpg') },
     ],
   },

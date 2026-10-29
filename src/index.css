@@ -315,3 +315,43 @@ button {
   .zou-morph-mark { transform: scale(.72); }
   .zou-loader { gap: 1.2rem; }
 }
+
+/* Taipei Riverside: project-specific editorial pacing and original artwork. */
+.riverside-case {
+  --river-ink: #182749;
+  --river-paper: #f6f5f1;
+  background: #fff;
+  color: var(--river-ink);
+}
+.riverside-case figure { margin: 0; min-width: 0; }
+.riverside-label { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; line-height: 1.6; }
+.riverside-opening { background: var(--river-ink); color: #fff; padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 72px); }
+.riverside-opening > .riverside-label { color: #efbb58; }
+.riverside-opening h2 { font-size: clamp(28px, 3.5vw, 56px); line-height: 1.18; font-weight: 500; margin-top: 24px; }
+.riverside-chinese { font-size: clamp(20px, 2vw, 28px); margin-top: 16px; letter-spacing: .08em; color: #efbb58; }
+.riverside-opening-copy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; margin-top: 40px; }
+.riverside-opening-copy p { font-size: 14px; line-height: 1.95; color: #e0e6ef; }
+.riverside-note { margin-top: 32px; font-size: 12px; color: #bec9db; }
+.riverside-intro { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; padding: clamp(36px, 5vw, 72px) clamp(24px, 5vw, 72px); align-items: start; }
+.riverside-intro .riverside-label { color: #3d567b; }
+.riverside-intro h2 { font-size: clamp(20px, 2vw, 28px); line-height: 1.6; margin-top: 16px; font-weight: 500; }
+.riverside-intro > p { font-size: 14px; line-height: 1.9; color: #46536a; }
+.riverside-paper { background: var(--river-paper); }
+.riverside-street-grid, .riverside-print-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: 32px; }
+.riverside-street-grid { align-items: center; }
+.riverside-case figcaption { font-size: 12px; line-height: 1.7; margin-top: 12px; color: #46536a; }
+.riverside-guide { padding: 12px 32px 24px; }
+.riverside-print-grid { align-items: center; padding-top: 12px; padding-bottom: 48px; }
+.riverside-closing { background: var(--river-ink); color: #fff; text-align: center; padding: 64px 24px; }
+.riverside-closing > p:nth-child(2) { font-size: clamp(24px, 3vw, 40px); margin-top: 20px; letter-spacing: .16em; }
+.riverside-closing > span { display: block; color: #c3cfdf; font-size: 12px; line-height: 1.8; margin-top: 24px; }
+.riverside-sidebar p.text-\[11px\], .riverside-sidebar dd { font-size: 13px; }
+.riverside-sidebar h1 { letter-spacing: 0; line-height: 1.2; }
+@media (max-width: 1100px) {
+  .riverside-opening-copy, .riverside-intro { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 767px) {
+  .riverside-street-grid, .riverside-print-grid { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
+  .riverside-guide { padding: 0 16px 16px; }
+  .riverside-sidebar .case-label { font-size: 11px; }
+}

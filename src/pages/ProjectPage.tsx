@@ -6,6 +6,7 @@ import { EggStudioCase } from '../components/EggStudioCase'
 import { ILookCase } from '../components/ILookCase'
 import { ZoolerCase } from '../components/ZoolerCase'
 import { ProductTechnicalCase } from '../components/ProductTechnicalCase'
+import { RiversideCase } from '../components/RiversideCase'
 import { getProject, projects } from '../lib/projects'
 
 const assetUrl = (path: string) => `${import.meta.env.BASE_URL}assets/${path}`
@@ -24,13 +25,16 @@ export function ProjectPage() {
   const isZooler = project.slug === 'zooler-ruler-set'
   const isILook = project.slug === 'ilook-cereal-packaging'
   const isInternationalExhibitions = project.slug === 'international-exhibitions'
+  const isRiverside = project.slug === 'taipei-riverside-music-festival'
   const isProductTechnical = project.slug === 'product-catalog'
 
   return (
     <article className="pt-[56px]">
       <div className="max-w-[1800px] mx-auto grid md:grid-cols-[360px_minmax(0,1fr)]">
-        <main className="min-w-0 bg-bg md:col-start-2">
-          {isEggStudio ? (
+        <main className={`min-w-0 bg-bg md:col-start-2 ${isRiverside ? 'order-2 md:order-none' : ''}`}>
+          {isRiverside ? (
+            <RiversideCase />
+          ) : isEggStudio ? (
             <EggStudioCase />
           ) : isZooler ? (
             <ZoolerCase />
@@ -83,7 +87,7 @@ export function ProjectPage() {
           )}
         </main>
 
-        <aside className="relative md:col-start-1 md:row-start-1 border-r border-line bg-bg">
+        <aside className={`relative md:col-start-1 md:row-start-1 border-r border-line bg-bg ${isRiverside ? 'riverside-sidebar order-1 md:order-none' : ''}`}>
           <div className="md:sticky md:top-[56px] md:max-h-[calc(100vh-56px)] md:overflow-y-auto no-scrollbar px-6 md:px-10 py-10 md:py-8">
             <Link to="/#selected-work" className="inline-flex items-center gap-2 text-xs text-ink-faint hover:text-ink mb-7">
               <ArrowLeft size={13} /> Back to work

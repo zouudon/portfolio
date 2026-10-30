@@ -1,28 +1,50 @@
+import type { CSSProperties } from 'react'
+
 const dimensions: Record<string, readonly [number, number]> = {
-  'billboard': [1558, 1009],
-  'bottles': [2200, 1975],
+  'billboard': [3388, 2191],
+  'bottles': [3540, 3178],
   'bus-shelter': [1536, 1024],
-  'guide': [2200, 670],
-  'identity-system': [2000, 1705],
-  'key-visual': [2200, 1442],
-  'logo-construction': [2000, 375],
+  'guide': [3682, 1121],
+  'identity-system': [850.39398, 727.16],
+  'key-visual': [4800, 3146],
+  'logo-construction': [850.28, 159.53],
   'passes': [1608, 978],
   'poster-mockup': [1536, 1024],
-  'stage': [1518, 1036],
-  'street-flags': [1277, 1232],
+  'stage': [1592, 1087],
+  'street-flags': [2034, 1962],
   'tickets': [1809, 1345],
-  'tshirts': [2200, 1136],
+  'tshirts': [3597, 1858],
 }
 
-const image = (name: string) => `${import.meta.env.BASE_URL}assets/taipei-riverside/${name}.webp`
+const vectorArtwork = new Set(['logo-construction', 'identity-system'])
+const image = (name: string) => `${import.meta.env.BASE_URL}assets/taipei-riverside/${name}.${vectorArtwork.has(name) ? 'svg' : 'webp'}`
 
 function Artwork({ name, alt, eager = false }: { name: string; alt: string; eager?: boolean }) {
-  // Keep each artwork's natural proportions, including portrait posters and flags.
   const [width, height] = dimensions[name]
+  const srcSet = !vectorArtwork.has(name) && width > 2400
+    ? `${image(`${name}-1600`)} 1600w, ${image(name)} ${width}w`
+    : undefined
   return (
     <a href={image(name)} target="_blank" rel="noreferrer" aria-label={`Open full-size artwork: ${alt}`} className="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
-      <img src={image(name)} alt={alt} width={width} height={height} loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : 'auto'} decoding="async" className="block h-auto w-full" />
+      <img src={image(name)} srcSet={srcSet} sizes={srcSet ? '(min-width: 768px) 78vw, 100vw' : undefined} alt={alt} width={width} height={height} loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : 'auto'} decoding="async" className="block h-auto w-full" />
     </a>
+  )
+}
+
+function ArtworkPair({ className, items }: { className: string; items: { name: string; alt: string; caption: string }[] }) {
+  // Proportional columns give both original images exactly the same height,
+  // without cropping artwork or stretching either image.
+  const columns = items.map(({ name }) => {
+    const [width, height] = dimensions[name]
+    return `${width / height}fr`
+  }).join(' ')
+
+  return (
+    <div className={className} style={{ '--artwork-columns': columns } as CSSProperties}>
+      {items.map(({ name, alt, caption }) => (
+        <figure key={name}><Artwork name={name} alt={alt} /><figcaption>{caption}</figcaption></figure>
+      ))}
+    </div>
   )
 }
 
@@ -68,20 +90,20 @@ export function RiversideCase() {
       <section>
         <Introduction number="03" title="In the city" chinese="從街道，到河岸舞台">The illustration expands across different scales and formats: a building billboard, a bus shelter, street flags, and a stage backdrop. Each application carries the same flowing rhythm into a different setting.</Introduction>
         <Artwork name="billboard" alt="建築外牆大型橫式看板的活動視覺應用模型" />
-        <div className="riverside-street-grid">
-          <figure><Artwork name="bus-shelter" alt="公車候車亭直式音樂季海報應用模型" /><figcaption>Bus shelter / 候車亭海報</figcaption></figure>
-          <figure><Artwork name="street-flags" alt="雙面路燈旗：中文音樂季主視覺與英文 Sound from the River 字樣" /><figcaption>Street flags / 路燈旗</figcaption></figure>
-        </div>
+        <ArtworkPair className="riverside-street-grid" items={[
+          { name: 'bus-shelter', alt: '公車候車亭直式音樂季海報應用模型', caption: 'Bus shelter / 候車亭海報' },
+          { name: 'street-flags', alt: '雙面路燈旗：中文音樂季主視覺與英文 Sound from the River 字樣', caption: 'Street flags / 路燈旗' },
+        ]} />
         <Artwork name="stage" alt="河岸戶外演出舞台背板的主視覺合成示意圖" />
       </section>
 
       <section className="riverside-paper">
         <Introduction number="04" title="Print & wayfinding" chinese="帶著音樂，走進活動現場">A fold-out guide brings the map and event information together. Tickets and identification passes extend the visual system into the smaller details of a festival visit.</Introduction>
         <div className="riverside-guide"><Artwork name="guide" alt="音樂季五折導覽摺頁展開圖，包含場地地圖與活動資訊" /></div>
-        <div className="riverside-print-grid">
-          <figure><Artwork name="tickets" alt="三款配色的長形音樂季票券設計" /><figcaption>Tickets / 票券設計</figcaption></figure>
-          <figure><Artwork name="passes" alt="記者證、貴賓證與工作證掛繩識別證應用模型" /><figcaption>Event passes / 活動識別證</figcaption></figure>
-        </div>
+        <ArtworkPair className="riverside-print-grid" items={[
+          { name: 'tickets', alt: '三款配色的長形音樂季票券設計', caption: 'Tickets / 票券設計' },
+          { name: 'passes', alt: '記者證、貴賓證與工作證掛繩識別證應用模型', caption: 'Event passes / 活動識別證' },
+        ]} />
       </section>
 
       <section>

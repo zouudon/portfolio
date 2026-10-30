@@ -337,11 +337,10 @@ button {
 .riverside-intro h2 { font-size: clamp(20px, 2vw, 28px); line-height: 1.6; margin-top: 16px; font-weight: 500; }
 .riverside-intro > p { font-size: 14px; line-height: 1.9; color: #46536a; }
 .riverside-paper { background: var(--river-paper); }
-.riverside-street-grid, .riverside-print-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: 32px; }
-.riverside-street-grid { align-items: center; }
+.riverside-street-grid, .riverside-print-grid { display: grid; grid-template-columns: var(--artwork-columns); align-items: start; gap: 24px; padding: 32px; }
 .riverside-case figcaption { font-size: 12px; line-height: 1.7; margin-top: 12px; color: #46536a; }
 .riverside-guide { padding: 12px 32px 24px; }
-.riverside-print-grid { align-items: center; padding-top: 12px; padding-bottom: 48px; }
+.riverside-print-grid { padding-top: 12px; padding-bottom: 48px; }
 .riverside-closing { background: var(--river-ink); color: #fff; text-align: center; padding: 64px 24px; }
 .riverside-closing > p:nth-child(2) { font-size: clamp(24px, 3vw, 40px); margin-top: 20px; letter-spacing: .16em; }
 .riverside-closing > span { display: block; color: #c3cfdf; font-size: 12px; line-height: 1.8; margin-top: 24px; }

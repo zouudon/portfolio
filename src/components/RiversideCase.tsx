@@ -1,23 +1,23 @@
 import type { CSSProperties } from 'react'
 
 const dimensions: Record<string, readonly [number, number]> = {
-  'billboard': [3388, 2191],
+  'billboard': [1558, 1009],
   'bottles': [3540, 3178],
   'bus-shelter': [1536, 1024],
   'guide': [3682, 1121],
   'identity-system': [850.39398, 727.16],
-  'key-visual': [4800, 3146],
+  'key-visual': [3543, 2322],
   'logo-construction': [850.28, 159.53],
   'passes': [1608, 978],
   'poster-mockup': [1536, 1024],
-  'stage': [1592, 1087],
-  'street-flags': [2034, 1962],
+  'stage': [1518, 1036],
+  'street-flags': [1277, 1232],
   'tickets': [1809, 1345],
   'tshirts': [3597, 1858],
 }
 
 const vectorArtwork = new Set(['logo-construction', 'identity-system'])
-const image = (name: string) => `${import.meta.env.BASE_URL}assets/taipei-riverside/${name}.${vectorArtwork.has(name) ? 'svg' : 'webp'}`
+const image = (name: string) => `${import.meta.env.BASE_URL}assets/taipei-riverside/${name}.${vectorArtwork.has(name) ? 'svg' : 'webp'}?v=20261030-source`
 
 function Artwork({ name, alt, eager = false }: { name: string; alt: string; eager?: boolean }) {
   const [width, height] = dimensions[name]

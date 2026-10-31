@@ -356,3 +356,19 @@ button {
   .riverside-guide-panel { padding: 24px 16px; }
   .riverside-sidebar .case-label { font-size: 11px; }
 }
+
+/* Retained project introduction and vector identity system. */
+.riverside-opening { background: var(--river-ink); color: #fff; padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 72px); }
+.riverside-opening > .riverside-label { color: #efbb58; }
+.riverside-opening h2 { font-size: clamp(28px, 3.5vw, 56px); line-height: 1.18; font-weight: 500; margin-top: 24px; }
+.riverside-chinese { font-size: clamp(20px, 2vw, 28px); margin-top: 16px; letter-spacing: .08em; color: #efbb58; }
+.riverside-opening-copy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; margin-top: 40px; }
+.riverside-opening-copy p { font-size: 14px; line-height: 1.95; color: #e0e6ef; }
+.riverside-note { margin-top: 32px; font-size: 12px; color: #bec9db; }
+.riverside-intro { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; padding: clamp(36px, 5vw, 72px) clamp(24px, 5vw, 72px); align-items: start; }
+.riverside-intro .riverside-label { color: #3d567b; }
+.riverside-intro h2 { font-size: clamp(20px, 2vw, 28px); line-height: 1.6; margin-top: 16px; font-weight: 500; }
+.riverside-intro > p { font-size: 14px; line-height: 1.9; color: #46536a; }
+@media (max-width: 1100px) {
+  .riverside-opening-copy, .riverside-intro { grid-template-columns: 1fr; gap: 24px; }
+}

@@ -48,7 +48,32 @@ function ArtworkPair({ items }: { items: { name: string; alt: string }[] }) {
 export function RiversideCase() {
   return (
     <div className="riverside-case">
-      <Artwork name="poster-mockup" alt="台北河岸音樂季直式海報：以樂手、樂器與波浪交織的插畫呈現夏日音樂，展示於淺灰牆面" eager />
+      <Artwork name="key-visual" alt="台北河岸音樂季主視覺：樂手、樂器與河流般的波浪交織，搭配擋不住的夏日戀曲標語" eager />
+
+      <section className="riverside-opening" aria-labelledby="river-opening-heading">
+        <p className="riverside-label">Taipei Riverside Music Festival · 2019</p>
+        <h2 id="river-opening-heading">Sound from the River</h2>
+        <p className="riverside-chinese" lang="zh-Hant">擋不住的夏日戀曲</p>
+        <div className="riverside-opening-copy">
+          <p>A summer by the water, filled with live music, markets, and the character of Dadaocheng. This student concept brings the riverside festival to life through a flowing visual language, from its identity to its printed and spatial applications.</p>
+          <p lang="zh-Hant">以大稻埕河岸的夏日音樂、市集與人文風景為起點，將水流、樂聲與演奏者的姿態融入活動識別。透過層疊色塊與帶有顆粒感的筆觸，延伸出一套充滿節奏的視覺系統。</p>
+        </div>
+        <p className="riverside-note">Student concept project · Application mockups</p>
+      </section>
+
+      <section aria-labelledby="river-identity-heading">
+        <div className="riverside-intro">
+          <div>
+            <p className="riverside-label">01 / Identity system</p>
+            <h2 id="river-identity-heading" lang="zh-Hant">讓河流，成為音樂的形狀</h2>
+          </div>
+          <p>The character 北 meets the rhythm of flowing water. The resulting mark, custom Chinese lettering, and wave patterns connect the festival’s name to its riverside setting.</p>
+        </div>
+        <Artwork name="logo-construction" alt="標誌構成：北字結合河流波紋，形成台北河岸音樂季識別標誌" />
+        <Artwork name="identity-system" alt="原版識別規範：橫式與直式標準字、深藍黃藍桃紅標準色、波浪輔助圖形與字體配置" />
+      </section>
+
+      <Artwork name="poster-mockup" alt="台北河岸音樂季直式海報：以樂手、樂器與波浪交織的插畫呈現夏日音樂，展示於淺灰牆面" />
 
       <section className="riverside-editorial riverside-editorial-billboard" aria-labelledby="river-city-heading">
         <div className="riverside-editorial-copy">

@@ -316,41 +316,43 @@ button {
   .zou-loader { gap: 1.2rem; }
 }
 
-/* Taipei Riverside: project-specific editorial pacing and original artwork. */
+/* Taipei Riverside: image sequence follows the supplied editorial reference. */
 .riverside-case {
   --river-ink: #182749;
-  --river-paper: #f6f5f1;
+  --river-gap: 6px;
+  --river-section-space: clamp(28px, 4vw, 64px);
   background: #fff;
   color: var(--river-ink);
 }
 .riverside-case figure { margin: 0; min-width: 0; }
-.riverside-label { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; line-height: 1.6; }
-.riverside-opening { background: var(--river-ink); color: #fff; padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 72px); }
-.riverside-opening > .riverside-label { color: #efbb58; }
-.riverside-opening h2 { font-size: clamp(28px, 3.5vw, 56px); line-height: 1.18; font-weight: 500; margin-top: 24px; }
-.riverside-chinese { font-size: clamp(20px, 2vw, 28px); margin-top: 16px; letter-spacing: .08em; color: #efbb58; }
-.riverside-opening-copy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; margin-top: 40px; }
-.riverside-opening-copy p { font-size: 14px; line-height: 1.95; color: #e0e6ef; }
-.riverside-note { margin-top: 32px; font-size: 12px; color: #bec9db; }
-.riverside-intro { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; padding: clamp(36px, 5vw, 72px) clamp(24px, 5vw, 72px); align-items: start; }
-.riverside-intro .riverside-label { color: #3d567b; }
-.riverside-intro h2 { font-size: clamp(20px, 2vw, 28px); line-height: 1.6; margin-top: 16px; font-weight: 500; }
-.riverside-intro > p { font-size: 14px; line-height: 1.9; color: #46536a; }
-.riverside-paper { background: var(--river-paper); }
-.riverside-street-grid, .riverside-print-grid { display: grid; grid-template-columns: var(--artwork-columns); align-items: start; gap: 24px; padding: 32px; }
-.riverside-case figcaption { font-size: 12px; line-height: 1.7; margin-top: 12px; color: #46536a; }
-.riverside-guide { padding: 12px 32px 24px; }
-.riverside-print-grid { padding-top: 12px; padding-bottom: 48px; }
-.riverside-closing { background: var(--river-ink); color: #fff; text-align: center; padding: 64px 24px; }
-.riverside-closing > p:nth-child(2) { font-size: clamp(24px, 3vw, 40px); margin-top: 20px; letter-spacing: .16em; }
-.riverside-closing > span { display: block; color: #c3cfdf; font-size: 12px; line-height: 1.8; margin-top: 24px; }
+.riverside-label { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; line-height: 1.6; color: #46536a; }
+.riverside-editorial { display: grid; align-items: center; gap: clamp(24px, 3vw, 48px); padding-block: var(--river-section-space); }
+.riverside-editorial-billboard { grid-template-columns: minmax(0, .85fr) minmax(0, 1.45fr); }
+.riverside-editorial-stage { grid-template-columns: minmax(0, 1.35fr) minmax(0, .95fr); }
+.riverside-editorial-copy { padding-inline: clamp(24px, 3vw, 48px); }
+.riverside-editorial-copy h2 { margin-top: 18px; font-size: clamp(22px, 2.2vw, 34px); font-weight: 500; line-height: 1.5; }
+.riverside-editorial-copy > p:not(.riverside-label) { margin-top: 20px; font-size: 14px; line-height: 1.9; color: #46536a; }
+.riverside-editorial-copy > .riverside-english { font-size: 13px; }
+.riverside-editorial-copy > .riverside-project-note { font-size: 12px; }
+.riverside-artwork-pair { display: grid; grid-template-columns: var(--artwork-columns); align-items: start; gap: var(--river-gap); }
+.riverside-festival-details { padding-top: var(--river-section-space); }
+.riverside-merchandise-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--river-gap); margin-top: var(--river-gap); align-items: stretch; }
+.riverside-merchandise-grid > a { align-self: start; }
+.riverside-merchandise-stack { display: flex; flex-direction: column; gap: var(--river-gap); min-width: 0; min-height: 0; }
+.riverside-guide-panel { display: flex; flex: 1; align-items: center; background: #f0f0f0; padding: clamp(12px, 2vw, 28px); }
+.riverside-guide-panel > a { width: 100%; }
 .riverside-sidebar p.text-\[11px\], .riverside-sidebar dd { font-size: 13px; }
 .riverside-sidebar h1 { letter-spacing: 0; line-height: 1.2; }
-@media (max-width: 1100px) {
-  .riverside-opening-copy, .riverside-intro { grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 768px) and (max-width: 1100px) {
+  .riverside-editorial { grid-template-columns: 1fr; gap: 24px; }
+  .riverside-editorial-copy { max-width: 60ch; }
 }
 @media (max-width: 767px) {
-  .riverside-street-grid, .riverside-print-grid { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
-  .riverside-guide { padding: 0 16px 16px; }
+  .riverside-editorial { grid-template-columns: 1fr; gap: 24px; }
+  .riverside-editorial-copy { padding-inline: 24px; }
+  .riverside-artwork-pair, .riverside-merchandise-grid { grid-template-columns: 1fr; gap: 16px; }
+  .riverside-merchandise-grid { margin-top: 16px; }
+  .riverside-merchandise-stack { gap: 16px; }
+  .riverside-guide-panel { padding: 24px 16px; }
   .riverside-sidebar .case-label { font-size: 11px; }
 }

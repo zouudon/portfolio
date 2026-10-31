@@ -9,7 +9,7 @@ const dimensions: Record<string, readonly [number, number]> = {
   'key-visual': [3543, 2322],
   'logo-construction': [850.28, 159.53],
   'passes': [1608, 978],
-  'poster-mockup': [1536, 1024],
+  'poster-mockup': [6144, 4096],
   'stage': [1518, 1036],
   'street-flags': [1277, 1232],
   'tickets': [1809, 1345],
@@ -17,7 +17,7 @@ const dimensions: Record<string, readonly [number, number]> = {
 }
 
 const vectorArtwork = new Set(['logo-construction', 'identity-system'])
-const image = (name: string) => `${import.meta.env.BASE_URL}assets/taipei-riverside/${name}.${vectorArtwork.has(name) ? 'svg' : 'webp'}?v=20261030-source`
+const image = (name: string) => `${import.meta.env.BASE_URL}assets/taipei-riverside/${name}.${vectorArtwork.has(name) ? 'svg' : 'webp'}?v=20261031-layout`
 
 function Artwork({ name, alt, eager = false }: { name: string; alt: string; eager?: boolean }) {
   const [width, height] = dimensions[name]
@@ -31,31 +31,16 @@ function Artwork({ name, alt, eager = false }: { name: string; alt: string; eage
   )
 }
 
-function ArtworkPair({ className, items }: { className: string; items: { name: string; alt: string; caption: string }[] }) {
-  // Proportional columns give both original images exactly the same height,
-  // without cropping artwork or stretching either image.
+function ArtworkPair({ items }: { items: { name: string; alt: string }[] }) {
+  // Match heights using the original aspect ratios, with no cropping or stretching.
   const columns = items.map(({ name }) => {
     const [width, height] = dimensions[name]
     return `${width / height}fr`
   }).join(' ')
 
   return (
-    <div className={className} style={{ '--artwork-columns': columns } as CSSProperties}>
-      {items.map(({ name, alt, caption }) => (
-        <figure key={name}><Artwork name={name} alt={alt} /><figcaption>{caption}</figcaption></figure>
-      ))}
-    </div>
-  )
-}
-
-function Introduction({ number, title, chinese, children }: { number: string; title: string; chinese: string; children: string }) {
-  return (
-    <div className="riverside-intro">
-      <div>
-        <p className="riverside-label">{number} / {title}</p>
-        <h2 lang="zh-Hant">{chinese}</h2>
-      </div>
-      <p>{children}</p>
+    <div className="riverside-artwork-pair" style={{ '--artwork-columns': columns } as CSSProperties}>
+      {items.map(({ name, alt }) => <figure key={name}><Artwork name={name} alt={alt} /></figure>)}
     </div>
   )
 }
@@ -63,59 +48,50 @@ function Introduction({ number, title, chinese, children }: { number: string; ti
 export function RiversideCase() {
   return (
     <div className="riverside-case">
-      <Artwork name="key-visual" alt="台北河岸音樂季主視覺：樂手、樂器與河流般的波浪交織，搭配擋不住的夏日戀曲標語" eager />
+      <Artwork name="poster-mockup" alt="台北河岸音樂季直式海報：以樂手、樂器與波浪交織的插畫呈現夏日音樂，展示於淺灰牆面" eager />
 
-      <section className="riverside-opening">
-        <p className="riverside-label">Taipei Riverside Music Festival · 2019</p>
-        <h2>Sound from the River</h2>
-        <p className="riverside-chinese" lang="zh-Hant">擋不住的夏日戀曲</p>
-        <div className="riverside-opening-copy">
-          <p>A summer by the water, filled with live music, markets, and the character of Dadaocheng. This student concept brings the riverside festival to life through a flowing visual language, from its identity to its printed and spatial applications.</p>
-          <p lang="zh-Hant">以大稻埕河岸的夏日音樂、市集與人文風景為起點，將水流、樂聲與演奏者的姿態融入活動識別。透過層疊色塊與帶有顆粒感的筆觸，延伸出一套充滿節奏的視覺系統。</p>
+      <section className="riverside-editorial riverside-editorial-billboard" aria-labelledby="river-city-heading">
+        <div className="riverside-editorial-copy">
+          <p className="riverside-label">Sound from the River</p>
+          <h2 id="river-city-heading" lang="zh-Hant">把河岸的節奏，<br />帶進城市。</h2>
+          <p lang="zh-Hant">以水流、樂聲與演奏者的姿態，交織出夏日音樂季的主視覺。插畫從海報延伸至城市街景，讓不同尺寸的載體共享同一份流動感。</p>
+          <p className="riverside-english">A flowing visual identity, from a festival poster to the city’s streets.</p>
         </div>
-        <p className="riverside-note">Student concept project · Application mockups</p>
+        <Artwork name="billboard" alt="音樂季主視覺應用於晴天下的大樓外牆橫式看板" />
       </section>
 
-      <section>
-        <Introduction number="01" title="Identity system" chinese="讓河流，成為音樂的形狀">The character 北 meets the rhythm of flowing water. The resulting mark, custom Chinese lettering, and wave patterns connect the festival’s name to its riverside setting.</Introduction>
-        <Artwork name="logo-construction" alt="標誌構成：北字結合河流波紋，形成台北河岸音樂季識別標誌" />
-        <Artwork name="identity-system" alt="原版識別規範：橫式與直式標準字、深藍黃藍桃紅標準色、波浪輔助圖形與字體配置" />
-      </section>
-
-      <section className="riverside-paper">
-        <Introduction number="02" title="Key visual & poster" chinese="把夏日的聲音，畫進海報裡">Layered instruments, performers, and sweeping waves turn the poster into a composition of sound and movement. Warm coral and yellow sit against river blues, with textured edges giving the illustration a tactile finish.</Introduction>
-        <Artwork name="poster-mockup" alt="台北河岸音樂季直式主視覺海報於淺灰牆面上的展示模型" />
-      </section>
-
-      <section>
-        <Introduction number="03" title="In the city" chinese="從街道，到河岸舞台">The illustration expands across different scales and formats: a building billboard, a bus shelter, street flags, and a stage backdrop. Each application carries the same flowing rhythm into a different setting.</Introduction>
-        <Artwork name="billboard" alt="建築外牆大型橫式看板的活動視覺應用模型" />
-        <ArtworkPair className="riverside-street-grid" items={[
-          { name: 'bus-shelter', alt: '公車候車亭直式音樂季海報應用模型', caption: 'Bus shelter / 候車亭海報' },
-          { name: 'street-flags', alt: '雙面路燈旗：中文音樂季主視覺與英文 Sound from the River 字樣', caption: 'Street flags / 路燈旗' },
-        ]} />
-        <Artwork name="stage" alt="河岸戶外演出舞台背板的主視覺合成示意圖" />
-      </section>
-
-      <section className="riverside-paper">
-        <Introduction number="04" title="Print & wayfinding" chinese="帶著音樂，走進活動現場">A fold-out guide brings the map and event information together. Tickets and identification passes extend the visual system into the smaller details of a festival visit.</Introduction>
-        <div className="riverside-guide"><Artwork name="guide" alt="音樂季五折導覽摺頁展開圖，包含場地地圖與活動資訊" /></div>
-        <ArtworkPair className="riverside-print-grid" items={[
-          { name: 'tickets', alt: '三款配色的長形音樂季票券設計', caption: 'Tickets / 票券設計' },
-          { name: 'passes', alt: '記者證、貴賓證與工作證掛繩識別證應用模型', caption: 'Event passes / 活動識別證' },
+      <section aria-label="Street applications">
+        <ArtworkPair items={[
+          { name: 'bus-shelter', alt: '公車候車亭直式音樂季海報應用模型' },
+          { name: 'street-flags', alt: '雙面音樂季路燈旗，搭配中文主視覺與 Sound from the River 字樣' },
         ]} />
       </section>
 
-      <section>
-        <Introduction number="05" title="Festival merchandise" chinese="把河岸的夏天，帶回日常">A small instrument motif becomes a T-shirt detail, while the full illustration wraps around bottle labels. The same visual vocabulary shifts from a large public canvas to objects held and worn.</Introduction>
-        <Artwork name="tshirts" alt="白色與深藍色音樂季紀念上衣的圖案應用模型" />
-        <Artwork name="bottles" alt="音樂季彩色插畫延伸至兩款瓶身標籤的周邊設計模型" />
+      <section className="riverside-festival-details" aria-labelledby="river-details-heading">
+        <h2 id="river-details-heading" className="sr-only">Print, merchandise and festival guide</h2>
+        <ArtworkPair items={[
+          { name: 'tickets', alt: '藍色、橘色與紫色三款音樂季票券' },
+          { name: 'passes', alt: '記者證、貴賓證與工作證的掛繩識別證設計' },
+        ]} />
+        <div className="riverside-merchandise-grid">
+          <Artwork name="bottles" alt="兩款音樂季瓶身標籤，以彩色樂器插畫延伸活動視覺" />
+          <div className="riverside-merchandise-stack">
+            <Artwork name="tshirts" alt="白色與深藍色音樂季紀念上衣，分別以樂器與演奏者圖案點綴" />
+            <div className="riverside-guide-panel"><Artwork name="guide" alt="音樂季五折導覽摺頁展開，包含場地地圖與活動資訊" /></div>
+          </div>
+        </div>
       </section>
-      <div className="riverside-closing">
-        <p className="riverside-label">Sound from the River</p>
-        <p lang="zh-Hant">河岸・音樂・市集</p>
-        <span>Event identity / Illustration / Print & applications</span>
-      </div>
+
+      <section className="riverside-editorial riverside-editorial-stage" aria-labelledby="river-stage-heading">
+        <Artwork name="stage" alt="河岸舞台的音樂季主視覺背板合成，呈現樂團演奏與觀眾的活動情境" />
+        <div className="riverside-editorial-copy">
+          <p className="riverside-label">From print to place</p>
+          <h2 id="river-stage-heading" lang="zh-Hant">讓音樂，<br />回到河岸。</h2>
+          <p lang="zh-Hant">從票券、識別證到日常周邊，再延伸至河岸舞台。透過一致的色彩與插畫語彙，串起音樂季的每一個接觸點。</p>
+          <p className="riverside-english">One visual language across print, objects, and the riverside stage.</p>
+          <p className="riverside-project-note">Student concept · Application mockups</p>
+        </div>
+      </section>
     </div>
   )
 }

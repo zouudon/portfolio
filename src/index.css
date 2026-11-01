@@ -371,3 +371,29 @@ button {
 @media (max-width: 1100px) {
   .riverside-opening-copy, .riverside-intro { grid-template-columns: 1fr; gap: 24px; }
 }
+
+/* Packaging: preserve the supplied image sequence, proportions and white space. */
+.packaging-case { background: #fff; color: #17181b; }
+.packaging-artwork { display: block; min-width: 0; }
+.packaging-artwork:focus-visible { outline: 2px solid #17181b; outline-offset: -4px; }
+.packaging-artwork img { display: block; width: 100%; height: auto; }
+.packaging-hero { display: grid; grid-template-columns: 1.450528338136fr 0.666514598540fr; align-items: start; }
+.packaging-structure { display: grid; grid-template-columns: 1.08fr 1fr; gap: clamp(24px, 4vw, 64px); align-items: center; padding: clamp(48px, 7vw, 112px) clamp(28px, 5vw, 80px); }
+.packaging-copy { max-width: 44ch; }
+.packaging-label { font-size: 11px; line-height: 1.7; letter-spacing: .08em; text-transform: uppercase; color: #555961; }
+.packaging-copy h2 { font-size: clamp(22px, 2.1vw, 32px); font-weight: 600; line-height: 1.5; margin-top: 16px; }
+.packaging-copy > p:not(.packaging-label) { font-size: 14px; line-height: 1.9; color: #4a4e55; margin-top: 20px; }
+.packaging-copy > .packaging-english { font-size: 13px; }
+.packaging-sidebar h1 { letter-spacing: 0; line-height: 1.2; }
+.packaging-sidebar p.text-\[11px\], .packaging-sidebar dd { font-size: 13px; }
+@media (min-width: 768px) and (max-width: 1100px) {
+  .packaging-structure { grid-template-columns: 1fr; gap: 32px; }
+  .packaging-structure > .packaging-artwork { width: min(100%, 420px); margin-inline: auto; }
+  .packaging-copy { max-width: 60ch; }
+}
+@media (max-width: 767px) {
+  .packaging-hero, .packaging-structure { grid-template-columns: 1fr; }
+  .packaging-hero > .packaging-artwork:nth-child(2) { padding-inline: 15%; background: #e9e8e6; }
+  .packaging-structure { padding: 40px 24px; gap: 32px; }
+  .packaging-sidebar .case-label { font-size: 11px; }
+}

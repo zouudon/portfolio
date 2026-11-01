@@ -28,7 +28,7 @@ const eras = [
         slug: 'award-submissions',
         cover: assetUrl('ui-ux-awards/tmeta-cover.jpg'),
       },
-      { title: 'Packaging & Product Graphics', zh: '包裝與產品圖像', tags: ['Packaging', 'Product'], slug: 'packaging-design' },
+      { title: 'Packaging & Product Graphics', zh: '包裝與產品圖像', tags: ['Packaging', 'Product'], slug: 'packaging-design', cover: assetUrl('packaging-product/radar-carton-1600.webp') },
       {
         title: 'Product & Technical Communication',
         zh: '產品型錄、操作手冊與技術資訊系統',

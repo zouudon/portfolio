@@ -551,21 +551,23 @@ export const projects: Project[] = [
   {
     slug: 'packaging-design',
     category: 'editorial-print',
-    title: 'Protective Packaging Design',
-    subtitle: 'Structural and graphic design for product shipping packaging',
+    title: 'Packaging & Product Graphics',
+    subtitle: '包裝與產品圖像 — Product cartons, labels & accessory pouches',
     year: '2023 – 2024',
     role: 'Packaging & Structural Design',
-    tags: ['Packaging', 'Structural Design'],
-    cover: A('editorial-print/packaging-01.jpg'),
+    tags: ['Packaging', 'Product Graphics', 'Structural Illustration'],
+    cover: A('packaging-product/radar-carton-1600.webp'),
     gallery: [
-      A('editorial-print/packaging-01.jpg'),
-      A('editorial-print/packaging-02.jpg'),
-      A('editorial-print/packaging-03.jpg'),
+      A('packaging-product/radar-carton.webp'),
+      A('packaging-product/edge-carton.webp'),
+      A('packaging-product/structure.webp'),
+      A('packaging-product/silver-pouches.webp'),
+      A('packaging-product/bubble-mailers.webp'),
     ],
     summary:
-      'Bubble-lined shipping packaging designed and iterated through multiple structural rounds before landing on the final production version.',
+      'Packaging graphics for T.RADAR PRO and T.META EDGE, from shipping cartons to cable labels and accessory pouches.',
     body: [
-      'Hardware packaging has a harder job than most retail packaging — it has to protect an expensive, sensitive device through freight shipping, not just look good on a shelf. This went through several structural iterations, testing fold patterns and cushioning placement before the graphic layer was finalized.',
+      'A graphic system across kraft cartons, silver cable pouches, and black bubble mailers. Product line drawings, handling symbols, and orange information labels connect the different formats, while structural illustrations show the relationship between the product, cushioning, and outer box. Packaging applications are presented as mockups.',
     ],
   },
   {

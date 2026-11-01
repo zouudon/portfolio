@@ -4,7 +4,7 @@ const dimensions: Record<string, readonly [number, number]> = {
   'billboard': [1558, 1009],
   'bottles': [3540, 3178],
   'bus-shelter': [1536, 1024],
-  'guide': [3682, 1121],
+  'guide': [1672, 940],
   'identity-system': [850.39398, 727.16],
   'key-visual': [3543, 2322],
   'logo-construction': [850.28, 159.53],
@@ -17,7 +17,8 @@ const dimensions: Record<string, readonly [number, number]> = {
 }
 
 const vectorArtwork = new Set(['logo-construction', 'identity-system'])
-const image = (name: string) => `${import.meta.env.BASE_URL}assets/taipei-riverside/${name}.${vectorArtwork.has(name) ? 'svg' : 'webp'}?v=20261031-layout`
+const artworkFiles: Record<string, string> = { guide: 'guide-mockup-v3.jpg' }
+const image = (name: string) => `${import.meta.env.BASE_URL}assets/taipei-riverside/${artworkFiles[name] ?? `${name}.${vectorArtwork.has(name) ? 'svg' : 'webp'}`}?v=20261031-layout`
 
 function Artwork({ name, alt, eager = false }: { name: string; alt: string; eager?: boolean }) {
   const [width, height] = dimensions[name]
@@ -102,7 +103,7 @@ export function RiversideCase() {
           <Artwork name="bottles" alt="兩款音樂季瓶身標籤，以彩色樂器插畫延伸活動視覺" />
           <div className="riverside-merchandise-stack">
             <Artwork name="tshirts" alt="白色與深藍色音樂季紀念上衣，分別以樂器與演奏者圖案點綴" />
-            <div className="riverside-guide-panel"><Artwork name="guide" alt="音樂季五折導覽摺頁展開，包含場地地圖與活動資訊" /></div>
+            <div className="riverside-guide-panel"><Artwork name="guide" alt="音樂季五折風琴導覽摺頁平放於淺灰桌面，微微展開並帶有自然起伏與柔和陰影" /></div>
           </div>
         </div>
       </section>

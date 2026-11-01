@@ -339,7 +339,7 @@ button {
 .riverside-merchandise-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--river-gap); margin-top: var(--river-gap); align-items: stretch; }
 .riverside-merchandise-grid > a { align-self: start; }
 .riverside-merchandise-stack { display: flex; flex-direction: column; gap: var(--river-gap); min-width: 0; min-height: 0; }
-.riverside-guide-panel { display: flex; flex: 1; align-items: center; background: #f0f0f0; padding: clamp(12px, 2vw, 28px); }
+.riverside-guide-panel { display: flex; flex: 1; align-items: center; background: #f0f0f0; }
 .riverside-guide-panel > a { width: 100%; }
 .riverside-sidebar p.text-\[11px\], .riverside-sidebar dd { font-size: 13px; }
 .riverside-sidebar h1 { letter-spacing: 0; line-height: 1.2; }
@@ -353,7 +353,6 @@ button {
   .riverside-artwork-pair, .riverside-merchandise-grid { grid-template-columns: 1fr; gap: 16px; }
   .riverside-merchandise-grid { margin-top: 16px; }
   .riverside-merchandise-stack { gap: 16px; }
-  .riverside-guide-panel { padding: 24px 16px; }
   .riverside-sidebar .case-label { font-size: 11px; }
 }
 
